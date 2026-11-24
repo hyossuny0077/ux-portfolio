@@ -88,7 +88,7 @@
       <div class="before-after__item">
         <h3>After</h3>
         <div class="placeholder-frame">
-          <p class="placeholder-frame__caption">[스크린샷: 자유대화 응답 화면]</p>
+          <img src="images/home-launcher.png" alt="음성 호출 대기 중인 홈 화면" loading="lazy" />
         </div>
         <p style="margin-top: var(--space-2); color: var(--color-text-muted); font-size: 0.95rem;">정해진 명령어 없이 말로 쓴다. 원하는 행동을 자연스럽게 말하면 기기가 의도를 파악해 기능을 실행한다.</p>
       </div>
@@ -104,30 +104,52 @@
     <article class="case-study">
       <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: var(--space-1);">Case 01 · 복약 설정 — 순서가 꼬일 수 없는 구조</h3>
       <dl class="case-study__flow">
-        <div><dt>Problem</dt><dd>복약 시간이 섞여 순서가 바뀔 수 있었다</dd></div>
-        <div><dt>Why</dt><dd>아침·점심·저녁 입력 범위가 겹치면 사용자가 실수해도 시스템이 막을 수 없다</dd></div>
-        <div><dt>Hypothesis</dt><dd>설정 범위를 겹치지 않게 나누면 어떤 값을 골라도 순서가 유지될 것이다</dd></div>
-        <div><dt>Design</dt><dd>아침·점심·저녁 설정 범위를 겹치지 않는 구조로 분리</dd></div>
-        <div><dt>Impact</dt><dd>어떤 값을 선택해도 순서가 꼬이지 않는 설정 구조 확보</dd></div>
+        <div><dt>Problem</dt><dd>복약 시간이 섞여 순서가 바뀔 수 있었고, 어르신이 작은 선택지와 복잡한 설정 화면을 다루기 어려웠다</dd></div>
+        <div><dt>Why</dt><dd>안내 문구를 늘리는 방식으로는 실수를 막을 수 없다. 구조 자체가 실수를 허용하지 않아야 한다</dd></div>
+        <div><dt>Hypothesis</dt><dd>시간대별 화면을 분리하고 설정 범위를 겹치지 않게 하면, 어떤 값을 선택해도 순서가 유지되고 실수가 구조적으로 불가능해질 것이다</dd></div>
+        <div><dt>Design</dt><dd>아침(4~10시)·점심(11~15시)·저녁(16~23시) 3개 화면으로 분리, 숫자 직접 입력 대신 선택식 UI, 미래 칸은 입력 자체를 차단, 복용/미복용/95분 무응답 3분류 + 음성 응답, 재알림 2회(+5분, +30분)</dd></div>
+        <div><dt>Validation</dt><dd>개발팀의 질문에서 예외 케이스(기기 꺼짐 후 재부팅, 네트워크 단절, 알림 시각 겹침) 정리를 시작. "한 화면에 세 시간대를 모두 두는 안"은 글씨가 작아져 어르신이 보기 어려워 폐기</dd></div>
+        <div><dt>Impact</dt><dd>어떤 값을 선택해도 순서가 꼬이지 않는 설정 구조 확보. 이후 반복 점검을 거치며 "무이용"→"무활동", "시간이예요"→"시간이에요" 등 문구·용어를 통일</dd></div>
       </dl>
-      <div class="placeholder-frame placeholder-frame--wide">
-        <p class="placeholder-frame__caption">[스크린샷: 복약 설정 화면 Before/After]</p>
+      <div class="frame-pair">
+        <div class="placeholder-frame">
+          <img src="images/medication-reminder.png" alt="아침 복약 알림 화면, 먹음/안먹음 버튼" loading="lazy" />
+        </div>
+        <div class="placeholder-frame">
+          <img src="images/medication-registered.png" alt="복약 시간 등록 완료 확인 화면" loading="lazy" />
+        </div>
       </div>
     </article>
 
     <article class="case-study">
       <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: var(--space-1);">Case 02 · 위험관리 알림 — "누가 지금 움직여야 하는가"</h3>
       <dl class="case-study__flow">
-        <div><dt>Problem</dt><dd>응급 알림을 놓치면 안 되고, 오작동으로 잘못 걸려도 안 된다</dd></div>
-        <div><dt>Why</dt><dd>알림의 양이 아니라 "누가 지금 움직여야 하는가"가 기준이어야 한다</dd></div>
-        <div><dt>Hypothesis</dt><dd>우선순위를 나누고 확인 절차를 두면 오작동 대응과 실제 응급 모두 놓치지 않을 것이다</dd></div>
-        <div><dt>Design</dt><dd>알림 우선순위 3등급 분류. 응급 알림에는 15초 확인창과 취소 방법 3가지, 물리 버튼 충돌·재부팅 예외까지 설계</dd></div>
-        <div><dt>Impact</dt><dd>우선순위·누적·예외까지 정리된 알림 체계 확보</dd></div>
+        <div><dt>Problem</dt><dd>알림이 8종(복약, 화재, 배터리 2단계, 인터넷, 원격지원, 메시지, 응급)이고 종류마다 문구·버튼·재알림·닫히는 조건이 달랐다. 응급 호출은 놓치면 안 되지만 오작동으로 잘못 걸려도 안 된다</dd></div>
+        <div><dt>Why</dt><dd>알림의 양이 아니라 "누가 지금 움직여야 하는가"가 기준이어야 한다. 놓침과 오작동 사이에서 균형을 잡아야 한다</dd></div>
+        <div><dt>Hypothesis</dt><dd>우선순위를 나누고 확인 절차를 두면, 중요한 알림은 놓치지 않으면서 오작동 대응도 줄일 수 있을 것이다</dd></div>
+        <div><dt>Design</dt><dd>알림을 긴급(화재·응급) &gt; 시스템(배터리·인터넷·원격지원) &gt; 일상 요청·응답(복약·메시지) 3등급으로 분류. 여러 알림이 겹치면 발생 시각순으로 쌓고 소리는 최상단 1건만. 응급 알림에는 15초 확인창 + 취소 방법 3가지(화면·물리버튼·음성), 물리 버튼 충돌과 재부팅 중 발생까지 예외 설계</dd></div>
+        <div><dt>Validation</dt><dd>위험 대응 기준(무엇을 응급으로 볼지) 자체는 팀의 정책 결정이었고, 그 위에 올라가는 상세 규칙(확인 시간, 취소 방법, 충돌 우선순위)은 직접 설계해 알림 명세에 반영. 이후 다른 명세(복약·설정·음악·라디오)가 이 규칙을 기준 문서로 인용</dd></div>
+        <div><dt>Impact</dt><dd>우선순위·누적·예외(버튼 충돌·오작동 취소·재부팅)까지 정리된 알림 체계 확보</dd></div>
       </dl>
       <div class="placeholder-frame placeholder-frame--wide">
-        <p class="placeholder-frame__caption">[스크린샷: 응급 알림 팝업 15초 확인 흐름]</p>
+        <img src="images/emergency-alert.png" alt="15초 후 응급콜 연결 확인 및 취소 화면" loading="lazy" />
       </div>
     </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">Hypothesis &amp; Validation</p>
+    <h2 class="section__title">검증 결과를 어떻게 확인했나 — 시안·명세 대조</h2>
+    <dl class="case-study__flow">
+      <div><dt>Problem</dt><dd>기기와 관리자 웹이 실시간으로 연동되는 구조라, 문구나 정책이 바뀔 때마다 기능명세서에 일일이 반영해야 했고 눈으로만 대조하면 놓치기 쉬웠다</dd></div>
+      <div><dt>Why</dt><dd>한 번 맞추는 것보다, 바뀔 때마다 다시 맞추는 과정을 싸게 만드는 것이 더 중요하다</dd></div>
+      <div><dt>Hypothesis</dt><dd>AI로 화면 단위 대조를 하면 사람이 눈으로 하는 것보다 빠르고, 반복 가능한 절차로 만들 수 있을 것이다</dd></div>
+      <div><dt>Test design</dt><dd>설치 과정 10개 화면을 명세와 나란히 펼쳐 🟢일치 / 🟡부분일치로 분류하고, 어긋난 곳은 원인을 디자인 쪽 / 명세 쪽으로 나눠 분석</dd></div>
+      <div><dt>Result</dt><dd>10개 화면 중 8개 일치, 2개 부분 일치. 맞춰야 할 곳 6건 도출(우선순위 높음 2건: 네트워크 실패 안내 문구 분기, 센서 4종 개별 상태 표시). 대조에 걸리는 시간이 2~3일에서 2일로 단축(체감 기준 추정치)</dd></div>
+      <div><dt>Next step</dt><dd>한 번의 대조로 끝내지 않고, 명세–화면 비교와 문서 간 기준 충돌을 "기계적 수정 / 충돌 / 미정"으로 분류해 보고하는 절차로 반복 가능하게 전환</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -141,10 +163,26 @@
 
 <section class="section">
   <div class="wrap">
+    <p class="section__label">Business Perspective</p>
+    <h2 class="section__title">설계가 사업과 만나는 지점</h2>
+    <p>이 서비스를 실제로 쓰는 사람(어르신)과 비용을 지불하는 의사결정자(기관·보호자)는 다릅니다. 기관 입장에서는 대면 출동을 줄이는 것이 운영 비용과 직결되지만, 그 목표가 어르신의 독립성을 해치는 방식으로 이뤄지면 서비스의 신뢰를 잃습니다. 그래서 알림 설계나 화면 구조를 정할 때마다 "운영자의 부담을 줄이는 선택이 어르신에게는 어떻게 보이는가"를 함께 따졌습니다. 기능 우선순위도 이 두 축(사용자 가치·운영 효율) 사이에서 조정한 결과입니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
     <p class="section__label">Learnings</p>
     <h2 class="section__title">배운 것과 남은 숙제</h2>
     <p><strong>안 띄우는 것도 설계입니다.</strong> 알림의 양보다 "누가 지금 움직여야 하는가"가 기준입니다. 시안만으로는 정해지지 않는 규칙이 남고, 이를 확정 / 미확정 / 개발 확인으로 구분해 보이게 하는 것까지가 설계자의 일이라고 생각했습니다. AI는 초안과 대조에 강하고, 판단과 확정은 사람이 해야 한다는 것도 배웠습니다.</p>
     <p><strong>아직 검증하지 못한 것:</strong> 이용자를 직접 인터뷰하지는 못했습니다. 현장 운영자·어르신·보호자 페르소나는 운영 조직이 모은 자료를 토대로 구성했습니다. 직접 만나 설계가 맞았는지 확인하는 것이 다음 과제입니다.</p>
+  </div>
+</section>
+
+<section class="section" style="text-align: center;">
+  <div class="wrap">
+    <p class="section__label">Closing</p>
+    <h2 class="section__title" style="max-width: none; margin: 0 auto;">화면만 설계하는 디자이너가 아니다</h2>
+    <p style="max-width: 50ch; margin: 0 auto; color: var(--color-text-muted);">사용자의 문제에서 출발해 가설을 세우고, 기술과 비즈니스를 연결하며, 제품 경험과 팀이 일하는 방식까지 설계합니다. AI는 초안과 반복 작업, 대조를 맡기는 도구로 쓰고, 판단과 책임은 제가 집니다. 그렇게 더 나은 제품을 만들어가는 Product Designer입니다.</p>
   </div>
 </section>
 
