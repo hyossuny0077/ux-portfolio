@@ -93,6 +93,44 @@
         <p style="margin-top: var(--space-2); color: var(--color-text-muted); font-size: 0.95rem;">정해진 명령어 없이 말로 쓴다. 원하는 행동을 자연스럽게 말하면 기기가 의도를 파악해 기능을 실행한다.</p>
       </div>
     </div>
+
+    <div class="placeholder-frame placeholder-frame--wide" style="margin-top: var(--space-4); background: transparent; border: none; aspect-ratio: auto; padding: 0;">
+      <div style="width: 100%;">
+        <p style="font-weight: 600; margin-bottom: var(--space-2);">자유대화로 할 수 있는 것</p>
+        <p style="color: var(--color-text-muted);">정해진 메뉴를 거치지 않고 말로 바로 처리합니다 — 복약 확인, 음악·라디오 재생, 기기 설정, 안부 확인, 말벗·날씨, 위급 시 119 연결까지. 화면에는 따라 말할 수 있는 예시 문구를 함께 보여줘서, 무엇을 말해야 할지 몰라도 막히지 않게 했습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">Familiar Interaction</p>
+    <h2 class="section__title">어르신에게 익숙한 방식을 그대로</h2>
+    <p>디지털 기기 이전에 익숙했던 방식(TV·라디오 채널을 손으로 돌리거나 버튼으로 넘기는 아날로그 조작)을 그대로 인터페이스에 들여오는 대신, 그 방식이 주던 느낌(바로 되고, 실수해도 괜찮은)을 음성으로 옮기려 했습니다.</p>
+
+    <article class="case-study" style="margin-top: var(--space-4);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: var(--space-1);">Case · 채널 선택 — 목록 탐색 대신 말로 바로</h3>
+      <dl class="case-study__flow">
+        <div><dt>Problem</dt><dd>라디오 채널이 목록으로 나열되는 화면은, 평생 아날로그 다이얼이나 버튼으로 채널을 넘겨 온 어르신에게 낯선 탐색 방식이다</dd></div>
+        <div><dt>Why</dt><dd>어르신에게 새 탐색 방식을 학습시키기보다, 이미 익숙한 "말하면 바로 틀어지는" 감각에 가깝게 만드는 편이 진입장벽을 낮춘다</dd></div>
+        <div><dt>Hypothesis</dt><dd>채널 이름을 직접 말하게 하면 목록을 눈으로 훑고 고르는 과정 자체를 없앨 수 있을 것이다</dd></div>
+        <div><dt>Design</dt><dd>"OO 라디오 틀어줘"처럼 채널명을 바로 말하면 재생, 채널을 말하지 않으면 마지막으로 듣던 채널을 이어서 재생. 다음 채널로 넘기는 음성 명령도 함께 지원</dd></div>
+        <div><dt>Open question</dt><dd><strong>음성 인터페이스를 쓰지 않거나, 말이 어눌한 사람은 어떻게 하는가?</strong> 음성이 모든 사용자의 문제를 해결하지 않는다고 보고, 화면에서 직접 채널을 골라 누르는 터치 방식도 그대로 남겨 두어 음성과 터치를 함께 지원하게 했다</dd></div>
+        <div><dt>Next step</dt><dd>지금은 설계 단계의 해결 방향이며, 실제 사용자 관찰을 통한 검증은 다음 과제로 남겨 두었다</dd></div>
+      </dl>
+    </article>
+
+    <article class="case-study">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: var(--space-1);">Case · 반복 안내 — 한 번 설명으로 충분한가</h3>
+      <dl class="case-study__flow">
+        <div><dt>Problem</dt><dd>기능을 한 번 안내한다고 해서 어르신이 그 기능을 기억하고 이후에 스스로 쓸 수 있는 것은 아니다</dd></div>
+        <div><dt>Why</dt><dd>한 번의 설명은 그 순간 이해돼도 금방 잊히기 쉽고, 어르신에게는 반복 노출이 학습에 더 유효하다고 보았다</dd></div>
+        <div><dt>Hypothesis</dt><dd>앱을 열 때마다 짧은 안내를 음성으로 반복해서 들려주면, 긴 설명 한 번보다 주요 기능을 자연스럽게 익히게 될 것이다</dd></div>
+        <div><dt>Design</dt><dd>앱 진입 시 뜨는 스플래시 화면에서 최소 노출 시간 동안 짧은 기능 안내를 음성으로 함께 전달하도록 설계</dd></div>
+        <div><dt>Validation</dt><dd>주요 기능 인지율, 최초 실행 성공률, 기능 재사용률, 도움 요청 빈도를 추적 지표로 설계했으나, 실제 사용 데이터로 가설을 검증하는 단계까지는 진행하지 못했다 — <strong>검증 예정</strong></dd></div>
+      </dl>
+    </article>
   </div>
 </section>
 
@@ -157,7 +195,15 @@
   <div class="wrap">
     <p class="section__label">AI Workflow</p>
     <h2 class="section__title">AI를 쓴 방식</h2>
-    <p>작업 전에 AI의 역할과 검수 기준을 먼저 정했습니다. 정책 결정과 최종 문구는 직접 확정하고, AI에는 초안 작성·반복 작업·누락 항목 확인을 맡겼습니다. 명세 1건 작성이 약 3~4일에서 2일로, 시안–명세 대조가 2~3일에서 2일로 줄었습니다(체감 기준의 대략치). 수작업이던 명세 변환과 시안–명세 대조를 도구와 절차로 바꾸고, 활용 후기를 문서로 정리해 팀에 공유했습니다.</p>
+    <p>작업 전에 AI의 역할과 검수 기준을 먼저 정했습니다. 정책 결정과 최종 문구는 직접 확정하고, AI에는 초안 작성·반복 작업·누락 항목 확인을 맡겼습니다. 명세 1건 작성이 약 3~4일에서 2일로, 시안–명세 대조가 2~3일에서 2일로 줄었습니다(체감 기준의 대략치). 수작업이던 명세 변환과 시안–명세 대조를 도구와 절차로 바꾸고, 활용 후기를 문서로 정리해 팀에 공유했습니다. 이 경험을 바탕으로 사내에 AI 활용 방법을 공유하는 세미나도 진행했습니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">Project Outcome</p>
+    <h2 class="section__title">프로젝트를 마치며</h2>
+    <p>혼자인 디자이너로 기획·개발·사업부와 매번 다른 언어로 이야기해야 했던 프로젝트였습니다. AI 도구를 명세 작성과 검증 절차에 적극적으로 끌어들여 업무 효율을 끌어올렸고, 그 과정에서 부서 간 기준 차이를 조율하는 협업을 경험했습니다. 결과물보다, 그 결과물에 이르는 판단 과정을 설명할 수 있다는 것이 이 프로젝트에서 남은 것입니다.</p>
   </div>
 </section>
 
