@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>[이름을 입력하세요] — Senior Product Designer</title>
+<meta name="description" content="문제 정의부터 제품 설계, AI 활용, 협업까지 — Senior Product Designer의 포트폴리오" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="site-header__name">[이름을 입력하세요]</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    <ul class="site-nav" id="siteNav">
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="hero__eyebrow">Senior Product Designer · UI/UX</p>
+    <h1 class="hero__headline">Beyond Interface, Designing Intelligence.</h1>
+    <p class="hero__sub">인터페이스를 넘어 사용자 경험과 서비스, 그리고 일하는 방식까지 설계합니다. 15년 동안 문제를 정의하고, 가설을 세우고, 검증하며 제품을 만들어 왔습니다.</p>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <p class="section__label">Work</p>
+    <h2 class="section__title">대표 프로젝트</h2>
+
+    <div class="project-grid">
+      <a href="project.html" class="project-card">
+        <div class="placeholder-frame placeholder-frame--wide">
+          <p class="placeholder-frame__caption">[스크린샷: 홈스테이션 메인 화면]</p>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__tag">시니어 케어 테크 스타트업</p>
+          <h3 class="project-card__title">AI 돌봄 로봇 &amp; 관리자 웹</h3>
+          <p class="project-card__desc">지켜보되 간섭하지 않는 돌봄 — 네 사용자의 서로 다른 불안을 하나의 원칙으로 묶은 UX 설계 과정</p>
+        </div>
+      </a>
+
+      <div class="project-card" style="cursor:default;">
+        <div class="placeholder-frame placeholder-frame--wide">
+          <p class="placeholder-frame__caption">[스크린샷: 주문접수 앱 화면]</p>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__tag">푸드테크 스타트업</p>
+          <h3 class="project-card__title">주문중개 · 정산 플랫폼</h3>
+          <p class="project-card__desc">점주 인터뷰와 매장 테스트를 거쳐 완성한 사장님 주문접수 앱과 간편 정산 경험</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ai">
+  <div class="wrap">
+    <p class="section__label">AI-Driven Design</p>
+    <h2 class="section__title">AI를 업무 절차로 바꾼 경험</h2>
+
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <p class="highlight-card__number">12건</p>
+        <h3 class="highlight-card__title">기능명세, 하나의 기준으로</h3>
+        <p class="highlight-card__desc">같은 틀로 작성한 기능명세 12건. AI에는 초안 작성과 반복 작업, 누락 확인을 맡기고 정책 결정과 최종 문구는 직접 확정했습니다.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="highlight-card__number">6건</p>
+        <h3 class="highlight-card__title">시안–명세 대조를 절차로</h3>
+        <p class="highlight-card__desc">설치 화면 10개를 명세서와 대조해 8개 일치를 확인하고, 맞춰야 할 곳 6건을 찾아 수정했습니다. 수작업이던 대조를 반복 가능한 절차로 바꿨습니다.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="highlight-card__number">34%↓</p>
+        <h3 class="highlight-card__title">알림 체계 단순화</h3>
+        <p class="highlight-card__desc">알림을 우선순위 3등급으로 재설계해 알림 명세가 약 34% 줄었고, 중복되던 공통 규칙은 15개에서 6개로 정리했습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="contact__title">같이 이야기 나누고 싶다면</h2>
+    <p class="hero__sub" style="margin: 0 auto var(--space-4);">프로젝트에 대해 더 자세히 듣고 싶으시다면 편하게 연락 주세요.</p>
+    <div class="contact__links">
+      <a class="btn" href="mailto:[이메일 주소]">[이메일 주소]</a>
+      <a class="btn btn--ghost" href="#">[LinkedIn 링크 추가]</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> [이름을 입력하세요]</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

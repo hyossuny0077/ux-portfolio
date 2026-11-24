@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI 돌봄 로봇 &amp; 관리자 웹 — [이름을 입력하세요]</title>
+<meta name="description" content="시니어 케어 테크 스타트업 — AI 돌봄 로봇과 관리자 웹 UX 설계 케이스 스터디" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="site-header__name">[이름을 입력하세요]</a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    <ul class="site-nav" id="siteNav">
+      <li><a href="index.html#projects">Work</a></li>
+      <li><a href="index.html#ai">AI</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← 전체 프로젝트로</a>
+    <p class="hero__eyebrow">시니어 케어 테크 스타트업 · 2026</p>
+    <h1 class="hero__headline">지켜보되 간섭하지 않는 돌봄</h1>
+    <p class="hero__sub">혼자 사는 어르신의 안부를 AI 기기가 먼저 묻고, 사람이 해야 할 일만 운영자에게 올려주는 돌봄 UX를 설계했습니다. 서로 다른 네 사람의 불안을 하나의 원칙으로 묶어 화면과 기능명세로 옮긴 과정입니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">Background</p>
+    <h2 class="section__title">서로 다른 네 사람의 불안, 하나의 원칙</h2>
+    <p>이 서비스에는 사용하는 사람이 네 명 있고, 이들은 서로 다른 것을 걱정합니다. 지켜보고 싶지만 간섭은 싫고, 출동은 줄이고 싶지만 안전은 지켜야 합니다.</p>
+
+    <table class="persona-table">
+      <thead>
+        <tr><th>사용자</th><th>페르소나</th><th>핵심 문제</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>어르신</td>
+          <td>이정숙 (76세)</td>
+          <td>혼자 지내는 시간이 길어 복약과 일정을 놓치고 위급 상황이 불안하지만, 자녀에게 부담을 주기는 싫다</td>
+        </tr>
+        <tr>
+          <td>보호자</td>
+          <td>김서현 (48세)</td>
+          <td>자주 연락할 수 없어 부모의 안전과 변화를 알기 어렵지만, 간섭처럼 느껴지는 것은 피하고 싶다</td>
+        </tr>
+        <tr>
+          <td>현장 운영자</td>
+          <td>김철수 (42세)</td>
+          <td>오작동과 실제 응급을 가려내느라 시간을 쓰고, 현장 조치 뒤에도 행정 처리를 해야 한다</td>
+        </tr>
+        <tr>
+          <td>기관 관리자</td>
+          <td>김지현 (55세)</td>
+          <td>무엇이 먼저인지 한눈에 알기 어렵고, 대면 출동은 줄이면서 안전은 지켜야 한다</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: var(--space-4);">이 충돌을 풀 기준으로 네 가지 방향을 세웠습니다: 의료적 접근보다 <strong>생활 중심으로</strong>, 감시보다 <strong>세심하게 살피는 방식으로</strong>, 보호보다 <strong>독립성을 존중하는 방식으로</strong>, 기술은 드러나지 않고 <strong>도움이 느껴지도록</strong>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">Before / After</p>
+    <h2 class="section__title">태블릿형 기기에서 대화형 AI 돌봄 기기로</h2>
+    <p>기존 태블릿 중심 인터페이스는 사용자가 직접 기능을 탐색하고 화면을 터치해야 했습니다. 디지털 기기 사용이 익숙하지 않은 어르신에게는 기능을 찾고 실행하는 과정 자체가 진입장벽이었습니다. 화면 탐색과 터치 중심의 조작을 음성 대화 중심으로 전환하면 그 부담을 줄일 수 있다는 가설을 세웠습니다.</p>
+
+    <div class="before-after" style="margin-top: var(--space-4);">
+      <div class="before-after__item">
+        <h3>Before</h3>
+        <div class="placeholder-frame">
+          <p class="placeholder-frame__caption">[스크린샷: 기존 태블릿 메뉴 탐색 화면]</p>
+        </div>
+        <p style="margin-top: var(--space-2); color: var(--color-text-muted); font-size: 0.95rem;">사용자가 화면에서 기능을 찾고, 메뉴를 선택하고, 실행한다.</p>
+      </div>
+      <div class="before-after__item">
+        <h3>After</h3>
+        <div class="placeholder-frame">
+          <p class="placeholder-frame__caption">[스크린샷: 자유대화 응답 화면]</p>
+        </div>
+        <p style="margin-top: var(--space-2); color: var(--color-text-muted); font-size: 0.95rem;">정해진 명령어 없이 말로 쓴다. 원하는 행동을 자연스럽게 말하면 기기가 의도를 파악해 기능을 실행한다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">UX Case Studies</p>
+    <h2 class="section__title">설계 판단을 보여주는 두 가지 사례</h2>
+
+    <article class="case-study">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: var(--space-1);">Case 01 · 복약 설정 — 순서가 꼬일 수 없는 구조</h3>
+      <dl class="case-study__flow">
+        <div><dt>Problem</dt><dd>복약 시간이 섞여 순서가 바뀔 수 있었다</dd></div>
+        <div><dt>Why</dt><dd>아침·점심·저녁 입력 범위가 겹치면 사용자가 실수해도 시스템이 막을 수 없다</dd></div>
+        <div><dt>Hypothesis</dt><dd>설정 범위를 겹치지 않게 나누면 어떤 값을 골라도 순서가 유지될 것이다</dd></div>
+        <div><dt>Design</dt><dd>아침·점심·저녁 설정 범위를 겹치지 않는 구조로 분리</dd></div>
+        <div><dt>Impact</dt><dd>어떤 값을 선택해도 순서가 꼬이지 않는 설정 구조 확보</dd></div>
+      </dl>
+      <div class="placeholder-frame placeholder-frame--wide">
+        <p class="placeholder-frame__caption">[스크린샷: 복약 설정 화면 Before/After]</p>
+      </div>
+    </article>
+
+    <article class="case-study">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: var(--space-1);">Case 02 · 위험관리 알림 — "누가 지금 움직여야 하는가"</h3>
+      <dl class="case-study__flow">
+        <div><dt>Problem</dt><dd>응급 알림을 놓치면 안 되고, 오작동으로 잘못 걸려도 안 된다</dd></div>
+        <div><dt>Why</dt><dd>알림의 양이 아니라 "누가 지금 움직여야 하는가"가 기준이어야 한다</dd></div>
+        <div><dt>Hypothesis</dt><dd>우선순위를 나누고 확인 절차를 두면 오작동 대응과 실제 응급 모두 놓치지 않을 것이다</dd></div>
+        <div><dt>Design</dt><dd>알림 우선순위 3등급 분류. 응급 알림에는 15초 확인창과 취소 방법 3가지, 물리 버튼 충돌·재부팅 예외까지 설계</dd></div>
+        <div><dt>Impact</dt><dd>우선순위·누적·예외까지 정리된 알림 체계 확보</dd></div>
+      </dl>
+      <div class="placeholder-frame placeholder-frame--wide">
+        <p class="placeholder-frame__caption">[스크린샷: 응급 알림 팝업 15초 확인 흐름]</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">AI Workflow</p>
+    <h2 class="section__title">AI를 쓴 방식</h2>
+    <p>작업 전에 AI의 역할과 검수 기준을 먼저 정했습니다. 정책 결정과 최종 문구는 직접 확정하고, AI에는 초안 작성·반복 작업·누락 항목 확인을 맡겼습니다. 명세 1건 작성이 약 3~4일에서 2일로, 시안–명세 대조가 2~3일에서 2일로 줄었습니다(체감 기준의 대략치). 수작업이던 명세 변환과 시안–명세 대조를 도구와 절차로 바꾸고, 활용 후기를 문서로 정리해 팀에 공유했습니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="section__label">Learnings</p>
+    <h2 class="section__title">배운 것과 남은 숙제</h2>
+    <p><strong>안 띄우는 것도 설계입니다.</strong> 알림의 양보다 "누가 지금 움직여야 하는가"가 기준입니다. 시안만으로는 정해지지 않는 규칙이 남고, 이를 확정 / 미확정 / 개발 확인으로 구분해 보이게 하는 것까지가 설계자의 일이라고 생각했습니다. AI는 초안과 대조에 강하고, 판단과 확정은 사람이 해야 한다는 것도 배웠습니다.</p>
+    <p><strong>아직 검증하지 못한 것:</strong> 이용자를 직접 인터뷰하지는 못했습니다. 현장 운영자·어르신·보호자 페르소나는 운영 조직이 모은 자료를 토대로 구성했습니다. 직접 만나 설계가 맞았는지 확인하는 것이 다음 과제입니다.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← 전체 프로젝트로</a>
+    <p>&copy; <span id="year"></span> [이름을 입력하세요]</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
