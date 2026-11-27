@@ -14,6 +14,7 @@
     --pkg:#1e8a6e; --pkg-soft:#e9f6f1;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  html,body{overflow-x:clip}
   body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
        background:var(--bg);color:var(--ink);line-height:1.65;font-size:14.5px;
        -webkit-font-smoothing:antialiased;word-break:keep-all}
@@ -55,6 +56,7 @@
   .comp p{font-size:13.5px;color:var(--ink-2)}
 
   /* Timeline table */
+  .table-scroll{overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:13.5px}
   th{text-align:left;font-weight:600;color:var(--ink-3);font-size:12px;padding:8px 10px;border-bottom:1px solid var(--ink)}
   td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -98,6 +100,7 @@
     .coverage{grid-template-columns:repeat(2,1fr)}
     .coverage div{border-bottom:1px solid var(--line)}
     .skills{grid-template-columns:1fr}
+    td:first-child,td:nth-child(2){white-space:normal}
   }
   @media print{
     body{background:#fff;font-size:12.5px}
@@ -169,6 +172,7 @@
 
   <!-- ===== CAREER SUMMARY ===== -->
   <h2>경력 한눈에 보기</h2>
+  <div class="table-scroll">
   <table>
     <thead><tr><th>기간</th><th>회사</th><th>분야</th><th>핵심 키워드</th></tr></thead>
     <tbody>
@@ -180,6 +184,7 @@
       <tr><td>2007.03 – 2010.11</td><td>CLEX</td><td>광고대행</td><td>다업종 웹사이트 구축 · 프로젝트 리더</td></tr>
     </tbody>
   </table>
+  </div>
 
   <!-- ===== EXPERIENCE ===== -->
   <h2>경력 상세</h2>
